@@ -22,9 +22,7 @@ RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC 
 RUN npm install -g typescript
 # Node
 
-RUN npm install
-
-RUN npm test 
+RUN npm install -g newman 
 
 WORKDIR /etc/newman
 
