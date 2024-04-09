@@ -1,0 +1,27 @@
+name: docker-compose-actions-workflow
+on: 
+
+    push:
+        branches:
+        - 'main'
+        
+    workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: <<<<<-------- Running Docker API tests ------->>>>
+        run: docker-compose up
+        
+      # - name: Run Docker 2
+      #   run: docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
+        
+      - name: =========  Attaching  Report  ===========
+        uses: actions/upload-artifact@v2
+        with:
+          name: Report
+          path: src/report/report.html
+
