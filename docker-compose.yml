@@ -9,10 +9,7 @@ services:
     container_name: Integration_test1    
     image: postman_report
     command:
-      run Frutas_API_V2.postman_collection.json
-      -r html,cli
-      --reporter-html-export report/report.html    
-      --reporter-html-template report/template.hbs
+      newman run Frutas_API_V2.postman_collection.json
         
 #   test2:
 #       container_name: Integration_test2

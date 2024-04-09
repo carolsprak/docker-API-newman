@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
   ca-certificates \
   curl
 
-ARG NODE_VERSION=14.16.0
+ARG NODE_VERSION=18.16.0
 ARG NODE_PACKAGE=node-v$NODE_VERSION-linux-x64
 ARG NODE_HOME=/opt/$NODE_PACKAGE
 
@@ -22,7 +22,9 @@ RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC 
 RUN npm install -g typescript
 # Node
 
-RUN npm install -g newman newman-reporter-html
+RUN npm install
+
+RUN npm test 
 
 WORKDIR /etc/newman
 

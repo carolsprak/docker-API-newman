@@ -15,13 +15,5 @@ jobs:
       
       - name: <<<<<-------- Running Docker API tests ------->>>>
         run: docker-compose up
-        
-      # - name: Run Docker 2
-      #   run: docker-compose -f docker-compose.yml -f docker-compose.qa.yml up -d
-        
-      - name: =========  Attaching  Report  ===========
-        uses: actions/upload-artifact@v2
-        with:
-          name: Report
-          path: src/report/report.html
+
 
