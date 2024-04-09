@@ -9,7 +9,7 @@ services:
     container_name: Integration_test1    
     image: postman_report
     command:
-      newman run Frutas_API_V2.postman_collection.json
+      run Frutas_API_V2.postman_collection.json
         
 #   test2:
 #       container_name: Integration_test2
